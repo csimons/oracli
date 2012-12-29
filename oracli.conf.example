@@ -1,0 +1,19 @@
+;; Modify this and save as ~/.config/oracli.conf
+;;
+;; Supported :type values are :oracle and :custom.
+
+{
+ :line-num-fmt "%d" ; Java printf format.
+ :prompt-char  \>   ; Single character.
+ :data-sources
+ {
+  "some-oracle-db" { :type :oracle
+                     :host "some-hostname"
+                     :port 1521
+                     :sid  "some-SID"
+                     :user "some-user"
+                     :pass "some-password" }
+  "some-mysql-db" { :type :custom
+                    :url "mysql://joe:secret@host:3306/somedb" }
+ }
+}

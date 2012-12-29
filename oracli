@@ -1,0 +1,31 @@
+#!/bin/bash
+# Christopher L. Simons
+
+if [ -z $ORACLI_HOME ]
+then
+    echo "$0: \$ORACLI_HOME environment variable must be set."
+    exit 1
+fi
+
+CONFIG=~/.config/oracli.conf
+
+test -f $CONFIG || { echo "$CONFIG must exist."; exit 1; }
+test -z $EDITOR &&
+    echo "$0: \$EDITOR variable should be set to enable buffer editing."
+
+NO_RLWRAP_MSG="$0: rlwrap not found so command history will be unavailable."
+type rlwrap > /dev/null 2>&1 || echo $NO_RLWRAP_MSG
+type rlwrap > /dev/null 2>&1 && READLINE="rlwrap -m"
+
+for file in $ORACLI_HOME/lib/*.jar
+do
+    if [ -z $ORACLI_LIB ]
+    then
+        ORACLI_LIB=$file
+    else
+        ORACLI_LIB=$ORACLI_LIB:$file
+    fi
+done
+
+exec $READLINE $JAVA_HOME/bin/java -cp $ORACLI_LIB clojure.main \
+    $ORACLI_HOME/src/oracli.clj $CONFIG $1

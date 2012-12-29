@@ -1,0 +1,20 @@
+COMMAND             FUNCTION
+-------             --------
+<text>              add text to buffer; & is used to prefix variables
+/print              display contents of buffer
+/clear              clear buffer
+/load <file>        replace buffer with file contents
+^6                  edit buffer (requires UNIX, rlwrap, $EDITOR set)
+
+/set                list current variables and their values
+/set <var> <value>  set variable <var> to value <value>
+/unset <var>        unset variable <var>
+
+/                   execute buffer
+@<file>             same as doing /load <file>.sql followed by /
+
+/commit             commit DB transaction
+/rollback           roll back DB transaction
+
+/exit               roll back and exit program
+/quit               same as /exit
