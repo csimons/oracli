@@ -74,7 +74,7 @@ Public License, which can be found in the file epl-v10.html in
 the licenses/ subdirectory of this distribution.
 
 The Oracle JDBC driver included with this project as file
-ojdbc6.jar is distributed under the Oracle Technology
+ojdbc5.jar is distributed under the Oracle Technology
 Network Development and Distribution License, which can be
 found in the file oracle-otn.txt in the licenses/ subdirectory
 of this distribution.
