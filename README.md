@@ -12,7 +12,7 @@ driver is available.
 - Runs on both UNIX-based and Windows systems
 - Support for SQL, DML, DDL, PLSQL
 - Preserves blank lines in code, unlike SQL\*Plus
-- dynamic result-set pretty-printing;
+- dynamic result set pretty-printing;
   no more adjusting linesize, col/format, etc. in SQL\*Plus
 - loading and saving external scripts
 - query-persistent shell variables
@@ -27,7 +27,7 @@ driver is available.
 - support for DBMS\_OUTPUT
 - support for logging/spooling
 - support for object compilation error messages
-- source-fetch: fetch creation code behing objects for immediate editing
+- source-fetch: fetch creation code behind objects for immediate editing
 - smart describe: describe most types of database objects
 
 ## Getting Started
